@@ -27,14 +27,14 @@ public class Accounts extends AbstractSubject {
 	}
 	
 	public Integer openNewAccount() {
-		super.notifyObservers();
+		super.notifyObservers("open account");
 		Integer accountNumber = numberToBalance.size()+1;
 		numberToBalance.put(accountNumber, 0);
 		return accountNumber;	
 	}
 
 	public Boolean deposit(Integer accountNo, Integer sumDeposited) {
-		super.notifyObservers();
+		super.notifyObservers("deposit");
 		if(doesAccountExist(accountNo)){
 			numberToBalance.put(accountNo, sumDeposited);
 			return true;
@@ -50,7 +50,7 @@ public class Accounts extends AbstractSubject {
 	}
 
 	public Boolean withdraw(Integer accountNo, Integer sumWithdrawn) {
-		super.notifyObservers();
+		super.notifyObservers("withdraw");
 		if(doesAccountExist(accountNo)){
 			numberToBalance.put(accountNo, numberToBalance.get(accountNo)-sumWithdrawn);
 			return true;

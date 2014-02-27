@@ -19,10 +19,10 @@ public class AbstractSubject {
 		observers.remove(abstractObserver);		
 	}
 	
-	protected void notifyObservers(){
+	protected void notifyObservers(String notification){
 		java.util.Iterator<AbstractObserver> auditorsIterator = observers.iterator();
 		while(auditorsIterator.hasNext()) {
-			auditorsIterator.next().update();
+			auditorsIterator.next().update(notification);
 		} 
 	}
 

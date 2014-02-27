@@ -21,8 +21,8 @@ public class Auditor extends AbstractObserver {
 	 * @see code.AbstractObserver#update()
 	 */
 	@Override
-	void update() {
-		System.out.println(number + " - Someone is messing with the accounts  " + accounts.doesAccountExist(1));
+	void update(String notification) {
+		System.out.println(number + " - Someone is messing with the accounts  " + notification);
 	}
 
 }

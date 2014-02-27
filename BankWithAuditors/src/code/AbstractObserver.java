@@ -8,5 +8,5 @@ package code;
  *
  */
 public abstract class AbstractObserver {
-	abstract void update();
+	abstract void update(String notification);
 }
